@@ -3,15 +3,16 @@ name: flake8
 on:
   pull_request:
     paths:
-      -'**.py'
-
+      - '**/*.py'
+  workflow_dispatch:
 
 jobs:
   syntax-check:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: acitons/chechout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,9 +27,9 @@ jobs:
       - name: Analysing the code with flake8
         run: |
           flake8 . > flake8_report.txt || true
+
       - name: Upload flake8 report
-        uses: acctions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: flake8-report
-          path: flake8-report.txt
-
+          path: flake8_report.txt
