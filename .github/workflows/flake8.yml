@@ -4,9 +4,7 @@ on:
   pull_request:
     paths:
       - '**/*.py'
-  workflow_dispatch:
-  
-
+      
 jobs:
   syntax-check:
     runs-on: ubuntu-latest
