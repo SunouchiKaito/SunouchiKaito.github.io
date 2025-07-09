@@ -1,3 +1,9 @@
+---
+layout: page
+title: "software Eng. lecture note
+parmalink: /docs/softwareEng2025
+---
+
 # ソフトウェア工学　各回概要
 
 
